@@ -29,11 +29,11 @@ interface QuestionDisplay {
     trigger('detailsFromLeft', [
       transition('leftPosition => finalPosition', [
         animate('300ms', keyframes([
-          style({ left: '-30px', offset: 0.0 }),
-          style({ left: '-20px', offset: 0.25 }),
-          style({ left: '-10px', offset: 0.5 }),
-          style({ left: '-5px', offset: 0.75 }),
-          style({ left: '0px', offset: 1.0 })
+          style({ marginLeft: '-30px', offset: 0.0 }),
+          style({ marginLeft: '-20px', offset: 0.25 }),
+          style({ marginLeft: '-10px', offset: 0.5 }),
+          style({ marginLeft: '-5px', offset: 0.75 }),
+          style({ marginLeft: '0px', offset: 1.0 })
         ]))
       ]),
     ]),

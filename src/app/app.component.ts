@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from './quiz.service';
 
@@ -38,4 +39,10 @@ export class AppComponent implements OnInit {
   }
 
   quizzes: QuizDisplay[] = [];
+
+  selectedQuiz: QuizDisplay | undefined = undefined;
+  selectQuiz = (q: QuizDisplay) => {
+    this.selectedQuiz = q;
+    console.log(this.selectedQuiz);
+  };
 }

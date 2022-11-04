@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
         questionName: y.name
       }))
     }));
+    
 
     console.log(this.quizzes);
   }
@@ -44,5 +45,20 @@ export class AppComponent implements OnInit {
     console.log(this.selectedQuiz);
   };
 
+  addNewQuiz = () => {
+    this.quizzes = [
+      ... this.quizzes
+      , {
+        quizName: 'Undefined Quiz'
+        , quizQuestions: [
+          {
+            questionName: "Question 1"
+          }, {
+            questionName: "Question 2"
+          }
+        ]
+      }
+    ]
+  };
 
 }

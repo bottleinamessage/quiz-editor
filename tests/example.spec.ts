@@ -1,20 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test('homepage has title and links to intro page', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-
-  // create a locator
-  const getStarted = page.getByRole('link', { name: 'Get started' });
-
-  // Expect an attribute "to be strictly equal" to the value.
-  await expect(getStarted).toHaveAttribute('href', '/docs/intro');
-
-  // Click the get started link.
-  await getStarted.click();
-
-  // Expects the URL to contain intro.
-  await expect(page).toHaveURL(/.*intro/);
+test('Clicking around quiz-editor...', async ({ page }) => {
+  await page.goto('http://localhost:4200/');
+  await page.getByRole('button', { name: 'Quiz 1 2 questions' }).click();
+  await page.getByRole('button', { name: 'Add New Question' }).click();
+  await page.getByRole('button', { name: 'Remove' }).nth(2).click();
+  await page.getByText('Mark for Delete').click();
 });

@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
         , markedForDelete: false
       })); 
       
-      this.loading= true;
+      this.loading= false;
 
     }
     catch (err) {

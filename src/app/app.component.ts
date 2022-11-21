@@ -41,12 +41,12 @@ export class AppComponent implements OnInit {
         , markedForDelete: false
       }));     
 
-      this.loadingQuizzes= true; 
+      this.loadingQuizzes= false; 
     }
     catch (err) {
       console.error(err);
       this.errorLoadingQuizzes = true;    
-      this.loadingQuizzes = true;  
+      this.loadingQuizzes = false;  
     }
   };
 

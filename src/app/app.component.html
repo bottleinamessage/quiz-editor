@@ -10,9 +10,20 @@
     </div>
   </div>
   <div 
-    class="row"
-    *ngIf="!errorLoadingQuizzes"
+  class="row"
+  *ngIf="loadingQuizzes"
   >
+    <div class="col-md-12">
+      <div class="alert alert-info mt-3">
+        Your quizzes are loading. One moment please ..
+      </div>
+    </div>
+  </div>
+  <div 
+    class="row"
+    *ngIf="!errorLoadingQuizzes && !loadingQuizzes"
+  >
+  
     <div class="col-md-4">
       <button 
         class="btn btn-outline-success mt-3 mb-3"

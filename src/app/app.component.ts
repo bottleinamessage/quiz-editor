@@ -30,8 +30,8 @@ export class AppComponent implements OnInit {
     const quizzes = this.quizSvc.loadQuizzes();
     console.log(quizzes);
 
-    quizzes.subscribe(
-      data => {
+    quizzes.subscribe({
+      next: data => {
         this.quizzes = data.map(x => ({
             quizName: x.name,
             quizQuestions: x.questions.map(y => ({
@@ -40,12 +40,12 @@ export class AppComponent implements OnInit {
             markedForDelete: false
           }));
         console.log(data);
-      }, err => {
+      }, error: err => {
         this.errorLoadingQuizzes = true;
         console.log(err.error);
         
       }
-    );
+  });
 
     // this.quizzes = quizzes.map(x => ({
     //   quizName: x.name

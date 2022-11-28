@@ -54,10 +54,10 @@ export class AppComponent implements OnInit {
   };
 
 
-  // Add quiz to the array of quizzes
+  // Create quiz object, Add new quiz to copied array of quizzes 
   addQuiz = () => {
     const quiz = {
-      quizName: "Quiz"
+      quizName: "Untitled Quiz"
       , quizQuestions: []
     };
     console.log(quiz);
@@ -67,8 +67,6 @@ export class AppComponent implements OnInit {
       ...this.quizzes 
       , quiz
     ];
-
-
-  }
+  };
 
 }

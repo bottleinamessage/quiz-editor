@@ -61,6 +61,14 @@ export class AppComponent implements OnInit {
       , quizQuestions: []
     };
     console.log(quiz);
+
+    // Use spread operator to clone quiz array, add new quiz to array
+    this.quizzes = [
+      ...this.quizzes 
+      , quiz
+    ];
+
+
   }
 
 }

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from './quiz.service';
 
+//Object that shapes data needed to display quizzes
 interface QuizDisplay {
   quizName: string;
   quizQuestions: QuestionDisplay[];
 }
 
+//Object that shapes data needed to display quiz questions
 interface QuestionDisplay {
   questionName: string;
 }
@@ -24,12 +26,12 @@ export class AppComponent implements OnInit {
   ) {
 
   }
-
+  //Load dummy quizzes from service
   ngOnInit(): void {
     const quizzes = this.quizSvc.loadQuizzes();
     console.log(quizzes);
 
-    //transforming the data from the web service into a useable format 
+    //transforming the data from the web service into a useable object format
     this.quizzes = quizzes.map(x => ({
       quizName: x.name
       , quizQuestions: x.questions.map((y: any) => ({
@@ -40,13 +42,25 @@ export class AppComponent implements OnInit {
     console.log(this.quizzes);
   }
 
+ 
   quizzes: QuizDisplay[] = [];
 
-  // selectedQuiz need to have type undefined in order to be assignable as the base state
+  // selectedQuiz need to have type undefined in order to be assignable as the base state?
   selectedQuiz: QuizDisplay | undefined = undefined
 
   selectQuiz = (q: QuizDisplay) => {
     this.selectedQuiz = q;
     console.log(this.selectedQuiz);
   };
+
+
+  // Add quiz to the array of quizzes
+  addQuiz = () => {
+    const quiz = {
+      quizName: "Quiz"
+      , quizQuestions: []
+    };
+    console.log(quiz);
+  }
+
 }

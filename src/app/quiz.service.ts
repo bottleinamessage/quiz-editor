@@ -37,4 +37,5 @@ export class QuizService {
 
     return quizzesFromWeb;
   }
+
 }

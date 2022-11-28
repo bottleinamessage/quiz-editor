@@ -41,4 +41,12 @@ export class AppComponent implements OnInit {
   }
 
   quizzes: QuizDisplay[] = [];
+
+  // selectedQuiz need to have type undefined in order to be assignable as the base state
+  selectedQuiz: QuizDisplay | undefined = undefined
+
+  selectQuiz = (q: QuizDisplay) => {
+    this.selectedQuiz = q;
+    console.log(this.selectedQuiz);
+  };
 }
